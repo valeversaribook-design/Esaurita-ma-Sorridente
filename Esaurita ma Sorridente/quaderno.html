@@ -1,0 +1,464 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
+<meta name="theme-color" content="#1a1410" />
+<title>Il Quaderno Gentile — Esaurita ma Sorridente</title>
+<meta name="description" content="Sette piccole pagine, tutte tue. Un mini-quaderno gentile da compilare quando vuoi tu, salvabile e stampabile." />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500;1,600&family=Allura&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
+<link rel="stylesheet" href="style.css" />
+</head>
+<body class="page-quaderno">
+
+<!-- HEADER -->
+<header class="page-head no-print">
+  <a href="index.html" class="page-head__back">
+    <span class="btn__arrow btn__arrow--back" aria-hidden="true">←</span>
+    Torna ai bonus
+  </a>
+
+  <div class="page-head__center">
+    <p class="eyebrow eyebrow--dark">Bonus 03 · Per le lettrici di <em>Esaurita ma Sorridente</em></p>
+    <h1 class="page-head__title">
+      <span class="script">Il Quaderno</span>
+      <span class="display">Gentile.</span>
+    </h1>
+    <p class="page-head__sub">
+      Sette piccole pagine, tutte tue.<br />
+      <em>Solo tue.</em>
+    </p>
+  </div>
+
+  <div class="page-head__ornament" aria-hidden="true">
+    <span class="five-min-block">
+      <span class="five-min-block__label">15 min</span>
+      <span class="five-min-block__line">per te</span>
+    </span>
+  </div>
+</header>
+
+
+<main class="quaderno-body">
+
+  <!-- INTRO NARRATIVA (stile Bobo Bear "A little note for you") -->
+  <article class="prose-card prose-card--intro no-print">
+    <p class="prose-card__greeting">Ciao.</p>
+
+    <p>Questo è un piccolo quaderno per te.</p>
+
+    <p>Lo apri quando vuoi, lo chiudi quando vuoi, e nessuno guarda dentro tranne te.</p>
+
+    <p>Dentro ci sono sette piccole pagine. Una a settimana, una al mese, tutte in un pomeriggio — non c'è un modo sbagliato di riempirlo.</p>
+
+    <p>Quello che scrivi qui non viene mandato a nessuno. Resta sul tuo dispositivo e si salva da solo mentre scrivi. Quando hai finito, puoi salvarlo come PDF o stamparlo, così rimane tuo per davvero.</p>
+
+    <p>Trova un posto comodo. Una tazza piena. Un respiro lungo.</p>
+
+    <p class="prose-card__close">Cominciamo da qui.</p>
+  </article>
+
+  <!-- COME USARE IL QUADERNO -->
+  <article class="prose-card no-print">
+    <h2 class="prose-card__title">Come usare il quaderno</h2>
+
+    <p>Non c'è un ordine. Puoi cominciare dalla prima pagina, dall'ultima, o da quella che ti chiama di più oggi.</p>
+
+    <p>Non devi rispondere a tutto. Lascia in bianco quello che non ti viene oggi, ci tornerai un'altra volta.</p>
+
+    <p>Quello che scrivi qui non è una verifica scolastica. Non devi essere brava, profonda, originale. Devi solo essere onesta.</p>
+
+    <p>Quando ti senti stanca, chiudi. Lo ritrovi com'è quando torni.</p>
+  </article>
+
+  <!-- BARRA AZIONI (sticky) -->
+  <div class="quaderno-actions no-print" id="quadernoActions">
+    <div class="quaderno-actions__status">
+      <span class="quaderno-actions__dot" aria-hidden="true"></span>
+      <span id="saveStatus">Salvato automaticamente</span>
+    </div>
+    <div class="quaderno-actions__buttons">
+      <button id="printQuadernoBtn" type="button" class="btn btn--primary btn--small">
+        <span class="btn__icon" aria-hidden="true">⤓</span>
+        Salva o stampa
+      </button>
+      <button id="resetQuadernoBtn" type="button" class="btn btn--ghost btn--small">
+        Pulisci tutto
+      </button>
+    </div>
+  </div>
+
+  <!-- INTESTAZIONE STAMPA -->
+  <header class="print-header print-only" aria-hidden="true">
+    <p class="print-header__brand">Esaurita ma Sorridente · Il Quaderno Gentile</p>
+    <p class="print-header__owner">
+      Quaderno di <span class="js-name-print"></span>
+    </p>
+    <p class="print-header__date">
+      Compilato il <span class="js-date-print"></span>
+    </p>
+  </header>
+
+  <!-- INTESTAZIONE FORM: il mio nome -->
+  <section class="chapter chapter--opener">
+    <p class="chapter__eyebrow">Prima di cominciare</p>
+    <h2 class="chapter__title">Questo quaderno è di</h2>
+
+    <div class="field field--inline">
+      <label for="ownerName" class="field__label">Il mio nome:</label>
+      <input
+        type="text"
+        id="ownerName"
+        class="field__input field__input--line"
+        data-save-key="ownerName"
+        placeholder="scrivi qui"
+        autocomplete="given-name"
+      />
+    </div>
+
+    <p class="chapter__hint">Anche solo l'iniziale va bene.</p>
+  </section>
+
+
+  <!-- =================================================== -->
+  <!-- CAPITOLO 1                                          -->
+  <!-- =================================================== -->
+  <section class="chapter">
+    <div class="chapter__head">
+      <span class="chapter__num">— Pagina 1 —</span>
+      <h2 class="chapter__title">Come mi chiamo davvero</h2>
+      <p class="chapter__sub">Un piccolo riconoscimento.</p>
+    </div>
+
+    <div class="chapter__intro">
+      <p>Inizia da una cosa semplicissima: il tuo nome.</p>
+      <p>Non quello che gli altri usano per chiederti favori. Non quello con cui qualcuno scrive il tuo turno della spesa.</p>
+      <p>Il tuo nome, quello vero. Quello che ti dicevi nella testa quando avevi otto anni e immaginavi chi saresti diventata.</p>
+    </div>
+
+    <div class="chapter__fields">
+      <div class="field">
+        <label class="field__label" for="ch1_q1">Una parola che mi descriverebbe meglio del mio ruolo:</label>
+        <input type="text" id="ch1_q1" class="field__input field__input--line" data-save-key="ch1_q1" placeholder="(es. curiosa, attenta, calma…)" />
+      </div>
+
+      <div class="field">
+        <label class="field__label" for="ch1_q2">Una cosa che gli altri vedono di me:</label>
+        <textarea id="ch1_q2" class="field__input field__input--area" data-save-key="ch1_q2" rows="3" placeholder="quello che pensano che tu sia"></textarea>
+      </div>
+
+      <div class="field">
+        <label class="field__label" for="ch1_q3">Una cosa che dentro di me so di essere:</label>
+        <textarea id="ch1_q3" class="field__input field__input--area" data-save-key="ch1_q3" rows="3" placeholder="quello che sai di te, anche se non lo dici"></textarea>
+      </div>
+    </div>
+  </section>
+
+  <!-- =================================================== -->
+  <!-- CAPITOLO 2                                          -->
+  <!-- =================================================== -->
+  <section class="chapter">
+    <div class="chapter__head">
+      <span class="chapter__num">— Pagina 2 —</span>
+      <h2 class="chapter__title">Le cose che mi fanno bene</h2>
+      <p class="chapter__sub">Anche quando non ho voglia.</p>
+    </div>
+
+    <div class="chapter__intro">
+      <p>Ognuna di noi ha le sue. Una tazza calda, una canzone, una finestra aperta, una persona che non fa domande.</p>
+      <p>Scrivile qui, una alla volta. Non per dovertele ricordare in astratto, ma per averle pronte i giorni in cui la testa è in fumo e non ti viene in mente niente.</p>
+    </div>
+
+    <div class="chapter__fields">
+      <div class="field">
+        <label class="field__label" for="ch2_q1">Una cosa piccola che mi calma quasi sempre:</label>
+        <input type="text" id="ch2_q1" class="field__input field__input--line" data-save-key="ch2_q1" placeholder="(es. una doccia calda, una camomilla, mettere a posto un cassetto…)" />
+      </div>
+
+      <div class="field">
+        <label class="field__label" for="ch2_q2">Una cosa che mi fa ridere, anche solo un po':</label>
+        <input type="text" id="ch2_q2" class="field__input field__input--line" data-save-key="ch2_q2" placeholder="(una persona, un video, un libro, un ricordo…)" />
+      </div>
+
+      <div class="field">
+        <label class="field__label" for="ch2_q3">Una cosa che mi rimette in pace col mio corpo:</label>
+        <input type="text" id="ch2_q3" class="field__input field__input--line" data-save-key="ch2_q3" placeholder="(camminare, stretching, una crema, una coperta pesante…)" />
+      </div>
+
+      <div class="field">
+        <label class="field__label" for="ch2_q4">Una persona che, anche solo a sentirla, mi alleggerisce:</label>
+        <input type="text" id="ch2_q4" class="field__input field__input--line" data-save-key="ch2_q4" placeholder="(il suo nome, anche solo l'iniziale)" />
+      </div>
+    </div>
+  </section>
+
+  <!-- =================================================== -->
+  <!-- CAPITOLO 3                                          -->
+  <!-- =================================================== -->
+  <section class="chapter">
+    <div class="chapter__head">
+      <span class="chapter__num">— Pagina 3 —</span>
+      <h2 class="chapter__title">I miei "non oggi"</h2>
+      <p class="chapter__sub">I piccoli no gentili che voglio iniziare a dire.</p>
+    </div>
+
+    <div class="chapter__intro">
+      <p>Dire <em>no</em> non è una guerra. È una porta che si chiude piano, perché dentro ci sei tu e ti serve un po' di silenzio.</p>
+      <p>Scrivi qui due o tre piccoli no che vuoi cominciare a dire. Non per sempre. Solo da oggi in poi, quando ti serve.</p>
+    </div>
+
+    <div class="chapter__fields">
+      <div class="field">
+        <label class="field__label" for="ch3_q1">Un "non oggi" che voglio dire al lavoro:</label>
+        <textarea id="ch3_q1" class="field__input field__input--area" data-save-key="ch3_q1" rows="2" placeholder="(la mail oltre orario, la riunione di troppo, la responsabilità che non è mia…)"></textarea>
+      </div>
+
+      <div class="field">
+        <label class="field__label" for="ch3_q2">Un "non oggi" che voglio dire in famiglia o con un amico:</label>
+        <textarea id="ch3_q2" class="field__input field__input--area" data-save-key="ch3_q2" rows="2" placeholder="(un favore automatico, una telefonata che drena, un compito che fanno tutti tranne me…)"></textarea>
+      </div>
+
+      <div class="field">
+        <label class="field__label" for="ch3_q3">Un "non oggi" che voglio dire a me stessa:</label>
+        <textarea id="ch3_q3" class="field__input field__input--area" data-save-key="ch3_q3" rows="2" placeholder="(la lista infinita prima di dormire, il senso di colpa quando mi fermo, il giudizio sul mio corpo…)"></textarea>
+      </div>
+    </div>
+  </section>
+
+  <!-- =================================================== -->
+  <!-- CAPITOLO 4                                          -->
+  <!-- =================================================== -->
+  <section class="chapter">
+    <div class="chapter__head">
+      <span class="chapter__num">— Pagina 4 —</span>
+      <h2 class="chapter__title">Il mio quadratino da 5 minuti</h2>
+      <p class="chapter__sub">Quando, dove, come.</p>
+    </div>
+
+    <div class="chapter__intro">
+      <p>Il libro lo dice in un modo molto semplice: se non ti prenoti tu, non ti prenota nessuno.</p>
+      <p>Allora ti prenoti qui. Cinque minuti al giorno. Non per fare qualcosa di importante. Solo per esistere senza compito.</p>
+      <p>Scegli un momento. Scegli un posto. Scegli una cosa piccolissima.</p>
+    </div>
+
+    <div class="chapter__fields">
+      <div class="field">
+        <label class="field__label" for="ch4_q1">Il momento della giornata che è più mio:</label>
+        <input type="text" id="ch4_q1" class="field__input field__input--line" data-save-key="ch4_q1" placeholder="(la mattina prestissimo, dopo pranzo, dopo cena…)" />
+      </div>
+
+      <div class="field">
+        <label class="field__label" for="ch4_q2">Il posto della casa in cui mi sento meglio:</label>
+        <input type="text" id="ch4_q2" class="field__input field__input--line" data-save-key="ch4_q2" placeholder="(la cucina, il bagno, il balcone, una poltrona…)" />
+      </div>
+
+      <div class="field">
+        <label class="field__label" for="ch4_q3">Una cosa piccolissima che potrei fare in 5 minuti senza utilità:</label>
+        <textarea id="ch4_q3" class="field__input field__input--area" data-save-key="ch4_q3" rows="2" placeholder="(guardare fuori, un audio messaggio a un'amica, accendere una candela, scrivere due righe…)"></textarea>
+      </div>
+
+      <div class="field">
+        <label class="field__label" for="ch4_q4">Quello che dirò a chi mi cerca in quei 5 minuti:</label>
+        <textarea id="ch4_q4" class="field__input field__input--area" data-save-key="ch4_q4" rows="2" placeholder="(una frase pronta, gentile e ferma, che puoi usare ogni volta che serve)"></textarea>
+      </div>
+    </div>
+  </section>
+
+  <!-- =================================================== -->
+  <!-- CAPITOLO 5                                          -->
+  <!-- =================================================== -->
+  <section class="chapter">
+    <div class="chapter__head">
+      <span class="chapter__num">— Pagina 5 —</span>
+      <h2 class="chapter__title">I miei segnali di stanchezza</h2>
+      <p class="chapter__sub">Per riconoscerla prima del crollo.</p>
+    </div>
+
+    <div class="chapter__intro">
+      <p>Il tuo corpo lo sa prima della tua testa. Mandibola stretta. Spalle alte. Pancia che brontola. Sospiri lunghi senza motivo.</p>
+      <p>Conoscere i tuoi segnali è il primo modo per fermarti in tempo. Non per giudicarti, ma per dirti, dolcemente: ok, è ora.</p>
+    </div>
+
+    <div class="chapter__fields">
+      <div class="field">
+        <label class="field__label" for="ch5_q1">Un segnale che mi dà il corpo quando sono al limite:</label>
+        <textarea id="ch5_q1" class="field__input field__input--area" data-save-key="ch5_q1" rows="2" placeholder="(testa pesante, occhi che bruciano, fame nervosa, stomaco chiuso…)"></textarea>
+      </div>
+
+      <div class="field">
+        <label class="field__label" for="ch5_q2">Un segnale che mi dà la testa:</label>
+        <textarea id="ch5_q2" class="field__input field__input--area" data-save-key="ch5_q2" rows="2" placeholder="(la lista non si ferma più, dimentico tutto, sento rumore anche nel silenzio…)"></textarea>
+      </div>
+
+      <div class="field">
+        <label class="field__label" for="ch5_q3">Un segnale che mi dà il cuore:</label>
+        <textarea id="ch5_q3" class="field__input field__input--area" data-save-key="ch5_q3" rows="2" placeholder="(insofferenza con i miei, pianto facile, voglia di sparire…)"></textarea>
+      </div>
+
+      <div class="field">
+        <label class="field__label" for="ch5_q4">Una cosa che farò la prossima volta che noto uno di questi segnali:</label>
+        <textarea id="ch5_q4" class="field__input field__input--area" data-save-key="ch5_q4" rows="2" placeholder="(una pausa, una telefonata, una doccia, uno stop di 10 minuti…)"></textarea>
+      </div>
+    </div>
+  </section>
+
+  <!-- =================================================== -->
+  <!-- CAPITOLO 6                                          -->
+  <!-- =================================================== -->
+  <section class="chapter">
+    <div class="chapter__head">
+      <span class="chapter__num">— Pagina 6 —</span>
+      <h2 class="chapter__title">Il mio promemoria per i giorni storti</h2>
+      <p class="chapter__sub">Le frasi che mi tengono.</p>
+    </div>
+
+    <div class="chapter__intro">
+      <p>Ci sono giorni in cui non ti viene in mente niente di buono. Sembra che il mondo si stia accanendo, che tu sia sbagliata, che non ci sia rimedio.</p>
+      <p>Quei giorni non ce la fai a ragionare. Ti servono frasi pronte, già scritte da te in un momento in cui stavi un po' meglio.</p>
+      <p>Scrivile qui. Tre frasi che, lette in un giorno storto, ti faranno respirare un secondo in più.</p>
+    </div>
+
+    <div class="chapter__fields">
+      <div class="field">
+        <label class="field__label" for="ch6_q1">Frase 1 — Per quando mi sento sbagliata:</label>
+        <textarea id="ch6_q1" class="field__input field__input--area field__input--quote" data-save-key="ch6_q1" rows="2" placeholder="(scrivi qualcosa che vorresti che una persona che ti vuole bene ti dicesse)"></textarea>
+      </div>
+
+      <div class="field">
+        <label class="field__label" for="ch6_q2">Frase 2 — Per quando mi sento esaurita:</label>
+        <textarea id="ch6_q2" class="field__input field__input--area field__input--quote" data-save-key="ch6_q2" rows="2" placeholder="(qualcosa di vero, di gentile, di tuo)"></textarea>
+      </div>
+
+      <div class="field">
+        <label class="field__label" for="ch6_q3">Frase 3 — Per quando mi sento sola:</label>
+        <textarea id="ch6_q3" class="field__input field__input--area field__input--quote" data-save-key="ch6_q3" rows="2" placeholder="(una promessa piccola e vera che ti puoi fare)"></textarea>
+      </div>
+    </div>
+  </section>
+
+  <!-- =================================================== -->
+  <!-- CAPITOLO 7                                          -->
+  <!-- =================================================== -->
+  <section class="chapter">
+    <div class="chapter__head">
+      <span class="chapter__num">— Pagina 7 —</span>
+      <h2 class="chapter__title">La lettera a me stessa</h2>
+      <p class="chapter__sub">Da rileggere tra trenta giorni.</p>
+    </div>
+
+    <div class="chapter__intro">
+      <p>Adesso ti scrivi una lettera. Una piccola.</p>
+      <p>Non a chi vorresti diventare. Non alla versione perfetta di te. A te, quella di oggi, che sta leggendo e che sta cercando di starci.</p>
+      <p>Dille quello che vorresti sentirti dire da qualcuno che ti vuole bene. Falla corta. Falla vera.</p>
+    </div>
+
+    <div class="chapter__fields">
+      <div class="field">
+        <label class="field__label" for="ch7_date">In data:</label>
+        <input type="text" id="ch7_date" class="field__input field__input--line field__input--short" data-save-key="ch7_date" placeholder="es. 18 giugno 2026" />
+      </div>
+
+      <div class="field">
+        <label class="field__label" for="ch7_letter">Cara me,</label>
+        <textarea id="ch7_letter" class="field__input field__input--area field__input--letter" data-save-key="ch7_letter" rows="10" placeholder="scrivi qui la tua lettera, come viene, anche poche righe"></textarea>
+        <p class="field__signature">— con affetto, sempre.</p>
+      </div>
+    </div>
+  </section>
+
+
+  <!-- CHIUSURA NARRATIVA -->
+  <article class="prose-card prose-card--closing">
+    <p class="prose-card__eyebrow">Una piccola nota per te</p>
+
+    <p>Hai scritto qui dentro.</p>
+    <p>Hai fatto questo.</p>
+
+    <p>Non importa quanto. Non importa se hai compilato tutto o solo una pagina. Hai aperto il quaderno. Ti sei seduta. Hai messo nero su panna qualcosa che di solito tieni dentro.</p>
+
+    <p class="prose-card__highlight">Questo conta.</p>
+
+    <p>Tornerai a queste pagine quando vuoi. Saranno qui ad aspettarti, gentili come oggi.</p>
+
+    <p class="prose-card__sign">— Con affetto, dal mondo di <em>"Esaurita ma Sorridente"</em>.</p>
+  </article>
+
+
+  <!-- RECENSIONE -->
+  <section class="review-card review-card--inline no-print">
+    <div class="review-card__ornament" aria-hidden="true">
+      <span class="five-min-block five-min-block--small">
+        <span class="five-min-block__label">2 min</span>
+        <span class="five-min-block__line">per noi</span>
+      </span>
+    </div>
+
+    <p class="review-card__eyebrow">Se il quaderno ti è stato di compagnia</p>
+    <h2 class="review-card__title">
+      <span class="script">Raccontaci com'è andata.</span>
+    </h2>
+
+    <p class="review-card__desc">
+      Una tua recensione su Amazon aiuta altre donne, come te,
+      a trovare il libro — e a regalarsi cinque minuti.
+    </p>
+
+    <p class="review-card__quote">
+      <em>Non serve scrivere un saggio.</em><br />
+      Basta una frase, anche piccola.<br />
+      Quella vera. La tua.
+    </p>
+
+    <a id="reviewBtn" href="#" target="_blank" rel="noopener" class="btn btn--primary btn--large">
+      <span class="btn__icon" aria-hidden="true">★</span>
+      Lascia una recensione su Amazon
+      <span class="btn__arrow" aria-hidden="true">→</span>
+    </a>
+
+    <p class="review-card__hint">
+      Si apre Amazon in una nuova scheda. Bastano due minuti.
+    </p>
+  </section>
+
+  <!-- NEXT BONUS -->
+  <section class="next-bonus no-print">
+    <p class="next-bonus__eyebrow">Vai a un altro bonus</p>
+    <div class="next-bonus__row">
+      <a href="wallpaper.html" class="next-bonus__link">
+        <span class="next-bonus__num">01</span>
+        <span class="next-bonus__name">
+          Gli sfondi <em>"Prima Tu"</em>
+        </span>
+        <span class="btn__arrow next-bonus__arrow" aria-hidden="true">→</span>
+      </a>
+      <a href="quiz.html" class="next-bonus__link">
+        <span class="next-bonus__num">02</span>
+        <span class="next-bonus__name">
+          Il quiz <em>"Brava Ragazza"</em>
+        </span>
+        <span class="btn__arrow next-bonus__arrow" aria-hidden="true">→</span>
+      </a>
+    </div>
+  </section>
+
+</main>
+
+<footer class="site-foot no-print">
+  <p>I tuoi bonus dal mondo di <em>"Esaurita ma Sorridente"</em>.</p>
+  <p class="site-foot__small">Prima il quiz, poi gli sfondi, poi — se ti va — 130 giorni in cui, per una volta, vieni prima tu.</p>
+</footer>
+
+<script src="config.js"></script>
+<script src="quaderno.js"></script>
+<script>
+  (function() {
+    var btn = document.getElementById('reviewBtn');
+    if (btn && window.BONUS_CONFIG) {
+      btn.href = window.BONUS_CONFIG.amazonReviewUrl;
+    }
+  })();
+</script>
+</body>
+</html>

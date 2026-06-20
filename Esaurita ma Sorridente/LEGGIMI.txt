@@ -1,0 +1,132 @@
+┌────────────────────────────────────────────────────────────┐
+│                                                            │
+│   I TUOI BONUS — Esaurita ma Sorridente                   │
+│   130 giorni per le donne che tengono tutto insieme       │
+│   tranne se stesse                                         │
+│                                                            │
+│   Tre piccoli regali dal mondo del libro:                 │
+│   01 · 7 sfondi "Prima Tu" per il telefono                │
+│   02 · Il quiz "Che tipo di Brava Ragazza sei?"           │
+│   03 · Il Quaderno Gentile (7 pagine da compilare)        │
+│   ★  · Un pulsante per lasciare la recensione             │
+│                                                            │
+└────────────────────────────────────────────────────────────┘
+
+
+PER LA LETTRICE — COME APRIRE I BONUS
+─────────────────────────────────────
+1. Scompatta la cartella (clic destro → "Estrai tutto" su
+   Windows, doppio clic su Mac).
+2. Apri il file "index.html" facendo doppio clic.
+3. Si aprirà nel tuo browser preferito (Chrome, Safari,
+   Edge, Firefox).
+
+Funziona sia su computer che su telefono e tablet.
+Non serve connessione internet (i caratteri si caricano
+da internet la prima volta, ma il resto funziona offline).
+
+
+COSA CONTIENE OGNI BONUS
+────────────────────────
+
+▸ BONUS 01 — Sfondi "Prima Tu"
+  7 wallpaper verticali per smartphone (941×1672 px) con
+  frasi gentili. Si scaricano uno alla volta o tutti
+  insieme con il pulsante "Scarica tutti".
+
+▸ BONUS 02 — Il quiz "Che tipo di Brava Ragazza sei?"
+  10 domande, 5 minuti, 4 profili. Alla fine ricevi il tuo
+  profilo con micro-azione da 5 minuti, e puoi salvare il
+  risultato in PDF o stamparlo.
+
+▸ BONUS 03 — Il Quaderno Gentile
+  7 piccole pagine da compilare (nome, le cose che mi fanno
+  bene, i miei "non oggi", il quadratino da 5 minuti, i miei
+  segnali di stanchezza, il promemoria per i giorni storti,
+  una lettera a me stessa).
+  Si compila quando e come si vuole, si salva automatica-
+  mente nel browser, e si può stampare o salvare come PDF.
+  Voce calda, gentile, mai giudicante.
+
+▸ PULSANTE RECENSIONE
+  Presente in tutte le pagine. Apre Amazon nella scheda
+  "scrivi una recensione" del libro.
+
+
+
+╔════════════════════════════════════════════════════════════╗
+║  PER LUCA — CONFIGURAZIONE PRIMA DELLA PUBBLICAZIONE       ║
+╚════════════════════════════════════════════════════════════╝
+
+UNICO PASSAGGIO NECESSARIO: inserire l'ASIN del libro
+────────────────────────────────────────────────────────
+
+Apri il file "config.js" con un editor di testo (Blocco Note,
+TextEdit, VS Code, ecc.) e sostituisci INSERISCI_ASIN_QUI con
+l'ASIN reale del libro su Amazon.it.
+
+Esempio: se l'ASIN è B0FXXXXX12, il file diventerà:
+
+    amazonReviewUrl: "https://www.amazon.it/review/create-review?asin=B0FXXXXX12",
+    amazonBookUrl: "https://www.amazon.it/dp/B0FXXXXX12",
+
+DOVE TROVARE L'ASIN
+Vai alla pagina del libro su Amazon.it. L'ASIN è il codice
+nell'URL dopo "/dp/" (es. amazon.it/dp/B0FXXXXX12).
+
+
+STRUTTURA FILE
+──────────────
+  index.html        → Hub principale (apre i 3 bonus)
+  quiz.html         → Pagina del quiz
+  quiz.js           → Logica del quiz
+  wallpaper.html    → Galleria sfondi telefono
+  quaderno.html     → Il Quaderno Gentile
+  quaderno.js       → Logica del quaderno (auto-save, stampa)
+  style.css         → Stili condivisi (palette copertina)
+  config.js         → ← QUI vai a modificare l'ASIN
+  LEGGIMI.txt       → Questo file
+  assets/
+    sfondi-prima-tu.zip   → ZIP dei 7 sfondi (download bulk)
+    wallpaper/            → Le 7 immagini singole PNG
+      01-prima-tu.png
+      02-pausa-manutenzione.png
+      03-non-rendimento.png
+      04-casa-aspetta.png
+      05-non-salvare-tutti.png
+      06-cinque-minuti.png
+      07-non-sbagliata.png
+
+
+PUBBLICAZIONE (DEPLOY)
+──────────────────────
+Il pacchetto è 100% statico: nessun server richiesto.
+
+Opzioni rapide:
+• Vercel       → drag & drop della cartella su vercel.com
+• Netlify      → drag & drop su app.netlify.com/drop
+• GitHub Pages → push su repo e attiva Pages
+• Hosting      → upload via FTP a qualsiasi hosting con
+                 supporto HTML
+
+Il dominio consigliato è qualcosa tipo:
+  esauritamasorridente-bonus.vercel.app
+oppure
+  bonus.esauritamasorridente.it
+
+
+COME GLI UTENTI USANO IL QUIZ
+─────────────────────────────
+Il "Salva o stampa il risultato" usa la finestra di stampa
+nativa del browser. L'utente può scegliere:
+- "Salva come PDF" → ottiene un PDF locale
+- una stampante reale → stampa su carta
+
+Funziona ovunque (Windows, Mac, iPhone, Android) senza
+plugin esterni.
+
+
+─────────────────────────────────────────────────────────
+Un bonus gentile dal mondo di "Esaurita ma Sorridente".
+Piccoli rituali. Grande effetto. Zero sensi di colpa.
+─────────────────────────────────────────────────────────
