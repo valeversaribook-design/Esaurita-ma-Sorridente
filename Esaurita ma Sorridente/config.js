@@ -12,10 +12,10 @@
 window.BONUS_CONFIG = {
   // Link diretto a "Scrivi una recensione" su Amazon.it
   // Sostituisci INSERISCI_ASIN_QUI con l'ASIN reale del libro (es. B0FXXXXXXX)
-  amazonReviewUrl: "https://www.amazon.it/review/create-review?asin=INSERISCI_ASIN_QUI",
+  amazonReviewUrl: "https://www.amazon.it/review/create-review/?asin=B0H6GLK72K",
 
   // Link alla pagina del libro su Amazon (per il pulsante "vai al libro")
-  amazonBookUrl: "https://www.amazon.it/dp/INSERISCI_ASIN_QUI",
+  amazonBookUrl: "https://www.amazon.it/dp/B0H6GLK72K",
 
   // Titolo del libro (usato in titoli e meta)
   bookTitle: "Esaurita ma Sorridente",
